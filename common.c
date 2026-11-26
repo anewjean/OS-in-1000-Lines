@@ -58,6 +58,9 @@ void printf(const char *fmt, ...) {
 
         fmt++;
     }
+end:
+    va_end(vargs);
+}
 
 void *memcpy(void *dst, const void *src, size_t n) {
     uint8_t *d = (uint8_t *) dst;
@@ -91,8 +94,4 @@ int strcmp(const char *s1, const char *s2) {
     }
 
     return *(unsigned char *)s1 - *(unsigned char *)s2;
-}
-
-end:
-    va_end(vargs);
 }
